@@ -1,3 +1,4 @@
+
 package challenges;
 
 public class NumberOne {
@@ -18,7 +19,16 @@ public class NumberOne {
      * @return an array with two values in it, the indices from the array numbers for the two numbers that sum to target
      */
     public int[] findTwoValuesThatSumToTarget(int[] numbers, int target) {
-        // Delete the line below and implement the method!
-        throw new UnsupportedOperationException();
+        int[] solutions = new int[2];
+        for(int i = 0; i < numbers.length-1; i++){
+            for(int j = i+1; j < numbers.length; j++){
+                if ((numbers[i] + numbers[j]) == target){
+                    solutions[0] = i;
+                    solutions[1] = j;
+
+                }
+            }
+        }
+        return solutions;
     }
 }

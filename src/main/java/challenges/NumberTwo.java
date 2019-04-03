@@ -22,7 +22,41 @@ public class NumberTwo {
      * @return true if the numbers are evenly spaced, otherwise false
      */
     public boolean evenlySpaced(int a, int b, int c){
-        // Delete the line below and implement the method!
-        throw new UnsupportedOperationException();
+        int largest;
+        int smallest;
+        int middle;
+        if(a > b){
+            if (a > c){
+                largest = a;
+                if(b > c){
+                    middle = b;
+                    smallest = c;
+                }
+                else{
+                    middle = c;
+                    smallest = b;
+                }
+            }
+            else{
+                largest = c;
+                middle = a;
+                smallest = b;
+            }
+        }
+        else{
+            if(b > c){
+                largest = b;
+                if(c > a){
+                    middle = c;
+                    smallest = a;
+                }
+                else{
+                    middle = a;
+                    smallest = c;
+                }
+            }
+        }
+        //check to make sure the differences are even
+        return false;
     }
 }

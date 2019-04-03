@@ -29,7 +29,9 @@ public class NumberFive {
      * @return true if word1 and word2 are case-insensitive anagrams, false otherwise.
      */
     public boolean isAnagram(String word1, String word2) {
-        // Delete the line below and implement the method!
-        throw new UnsupportedOperationException();
+        if(word1.length()==word2.length()){
+
+        }
+        return false;
     }
 }
