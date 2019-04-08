@@ -22,9 +22,9 @@ public class NumberTwo {
      * @return true if the numbers are evenly spaced, otherwise false
      */
     public boolean evenlySpaced(int a, int b, int c){
-        int largest;
-        int smallest;
-        int middle;
+        int largest = 0;
+        int smallest = 0;
+        int middle = 0;
         if(a > b){
             if (a > c){
                 largest = a;
@@ -55,8 +55,22 @@ public class NumberTwo {
                     smallest = c;
                 }
             }
+            else {
+                largest = c;
+                if(a < b){
+                    middle = b;
+                    smallest = a;
+                }
+                else {
+                    middle = a;
+                    smallest = b;
+                }
+            }
         }
         //check to make sure the differences are even
+        if((largest - middle) == (middle - smallest)){
+            return true;
+        }
         return false;
     }
 }
