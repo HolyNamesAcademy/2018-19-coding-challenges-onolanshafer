@@ -27,14 +27,23 @@ public class NumberThree {
     public String timeConversion(String s) {
     String military = "";
     String [] time = s.split(":");
-    int hour, minute, second;
-    hour = Integer.parseInt(time[0]);
-    minute = Integer.parseInt(time[1]);
-    second = Integer.parseInt(time[2]);
-    boolean morning = "AM".equals(time[1].substring(2));
-    //add 12 hourse and build time again
+    String hour, minute, second;
+    hour = time[0];
+    minute = time[1];
+    second = time[2].substring(0, 2);
+    boolean night = "PM".equals(time[2].substring(2));
+    if (night) {
+        if (! (hour.equals("12"))) {
+            hour = Integer.parseInt(hour) + 12 + "";
+        }
+    }
+    else {
+        if (hour.equals("12")){
+            hour = "00";
+        }
+    }
 
-
+    military = hour + ":" + minute + ":" + second;
     return military;
     }
 }
